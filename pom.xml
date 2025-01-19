@@ -186,6 +186,11 @@
                     </webApp>
                 </configuration>
             </plugin>
+            <plugin>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>10.21.1</version>
+            </plugin>
             <!-- CODE COVERAGE -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
