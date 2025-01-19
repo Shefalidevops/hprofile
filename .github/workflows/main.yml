@@ -17,7 +17,7 @@ jobs:
           java-version: '17'
       - uses: whelk-io/maven-settings-xml-action@v22
         with:
-          plugin_repositories: '[{ "id": "checkstyle", "url": "https://mvnrepository.com/artifact/com.puppycrawl.tools/checkstyl" }]'
+          plugin_repositories: '[{ "id": "nexus-codehaus-snapshot", "url": "https://oss.sonatype.org/content/repositories/codehaus-snapshots/" }]'
       - name: Maven test
         run:  mvn test
       
