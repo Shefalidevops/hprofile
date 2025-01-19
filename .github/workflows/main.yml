@@ -24,7 +24,7 @@ jobs:
           mvn install
       
       - name: checkstyle
-        run: mvn com.puppycrawl.tools:checkstyle
+        run: mvn maven-checkstyle-plugin:checkstyle
 
         
 
