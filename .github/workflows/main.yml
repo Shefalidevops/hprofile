@@ -18,10 +18,15 @@ jobs:
       # - uses: whelk-io/maven-settings-xml-action@v22
       #   with:
       #     plugin_repositories: '[{ "id": "nexus-codehaus-snapshot", "url": "https://oss.sonatype.org/content/repositories/codehaus-snapshots/" }]'
+      - run: mvn --version
+      - run: |
+         ls -l /home/runner/.m2
+         ls -l /home/runner/.m2/repository
       - name: Maven test
         run: |
           mvn test
           mvn install
+          
       
       - name: checkstyle
         run: |
