@@ -38,7 +38,7 @@ jobs:
       - name: checkstyle
         run: |
           ls -l
-          mvn maven-checkstyle-plugin:checkstyle
+          mvn checkstyle:checkstyle
 
         
 
