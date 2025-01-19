@@ -22,7 +22,7 @@ jobs:
         run:  mvn test
       
       - name: checkstyle
-        run: mvn checksytle:checkstyle
+        run: mvn maven-checkstyle-plugin:checkstyle
 
         
 
