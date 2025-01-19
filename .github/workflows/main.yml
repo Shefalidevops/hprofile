@@ -1,44 +1,60 @@
-name: Hprofile Actions
-on: 
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+# name: Hprofile Actions
+# on: 
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - main
     
-jobs: 
-  Testing:
-    runs-on: ubuntu-latest
-    steps: 
-      - name: Code Checkout
-        uses: actions/checkout@v4.2.2
-      - uses: actions/setup-java@v4
-        with:
-          distribution: 'corretto' # See 'Supported distributions' for available options
-          java-version: '11'
-      # - uses: whelk-io/maven-settings-xml-action@v22
-      #   with:
-      #     plugin_repositories: '[{ "id": "nexus-codehaus-snapshot", "url": "https://oss.sonatype.org/content/repositories/codehaus-snapshots/" }]'
-      - run: mvn --version
-      - run: |
-         ls -l /home/runner/.m2
+# jobs: 
+#   Testing:
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - name: Code Checkout
+#         uses: actions/checkout@v4.2.2
+#       - uses: actions/setup-java@v4
+#         with:
+#           distribution: 'corretto' # See 'Supported distributions' for available options
+#           java-version: '11'
+#       # - uses: whelk-io/maven-settings-xml-action@v22
+#       #   with:
+#       #     plugin_repositories: '[{ "id": "nexus-codehaus-snapshot", "url": "https://oss.sonatype.org/content/repositories/codehaus-snapshots/" }]'
+#       - run: mvn --version
+#       - run: |
+#          ls -l /home/runner/.m2
          
-      - name: Maven test
-        run: |
-          mvn test
-          mvn install
-          ls -l /home/runner/.m2/repository
-          ls -l /home/runner/.m2/repository/org
-          ls -l /home/runner/.m2/repository/org/apache
-          ls -l /home/runner/.m2/repository/org/apache/maven
-          ls -l /home/runner/.m2/repository/org/apache/maven/plugins
-          echo "next"
-          ls -l /home/runner/.m2/repository/com/puppycrawl/tools
+#       - name: Maven test
+#         run: |
+#           mvn test
+#           mvn install
+#           ls -l /home/runner/.m2/repository
+#           ls -l /home/runner/.m2/repository/org
+#           ls -l /home/runner/.m2/repository/org/apache
+#           ls -l /home/runner/.m2/repository/org/apache/maven
+#           ls -l /home/runner/.m2/repository/org/apache/maven/plugins
+#           echo "next"
+#           ls -l /home/runner/.m2/repository/com/puppycrawl/tools
 
       
-      - name: checkstyle
-        run: |
-          ls -l
-          mvn checkstyle:checkstyle
+#       - name: checkstyle
+#         run: |
+#           ls -l
+#           mvn checkstyle:checkstyle
 
         
+
+
+name: Hprofile Actions
+on: workflow_dispatch
+jobs: 
+   Testing:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Code checkout
+          uses: actions/checkout@v4.2.2
+
+        - name: Maven Test
+          uses: mvn test
+          
+        - name: Checkstyle
+          uses: mvn checkstyle:checkstyle  
 
