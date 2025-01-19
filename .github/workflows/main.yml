@@ -10,7 +10,7 @@ jobs:
       - name: Maven test
         run:  mvn test
       
-      - name: Checkstyle
+      - name: checkstyle-10.21.1
         run: mvn checksytle:checkstyle
 
         
