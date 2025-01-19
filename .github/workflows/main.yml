@@ -31,6 +31,9 @@ jobs:
           ls -l /home/runner/.m2/repository/org/apache
           ls -l /home/runner/.m2/repository/org/apache/maven
           ls -l /home/runner/.m2/repository/org/apache/maven/plugins
+          echo "next"
+          ls -l /home/runner/.m2/repository/com/puppycrawl/tools
+
       
       - name: checkstyle
         run: |
