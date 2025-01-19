@@ -15,7 +15,9 @@ jobs:
         with:
           distribution: 'corretto' # See 'Supported distributions' for available options
           java-version: '17'
-      
+      - uses: whelk-io/maven-settings-xml-action@v22
+        with:
+          plugin_repositories: '[{ "id": "checkstyle", "url": "https://mvnrepository.com/artifact/com.puppycrawl.tools/checkstyl" }]'
       - name: Maven test
         run:  mvn test
       
