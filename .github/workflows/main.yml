@@ -15,14 +15,16 @@ jobs:
         with:
           distribution: 'corretto' # See 'Supported distributions' for available options
           java-version: '11'
-      - uses: whelk-io/maven-settings-xml-action@v22
-        with:
-          plugin_repositories: '[{ "id": "nexus-codehaus-snapshot", "url": "https://oss.sonatype.org/content/repositories/codehaus-snapshots/" }]'
+      # - uses: whelk-io/maven-settings-xml-action@v22
+      #   with:
+      #     plugin_repositories: '[{ "id": "nexus-codehaus-snapshot", "url": "https://oss.sonatype.org/content/repositories/codehaus-snapshots/" }]'
       - name: Maven test
-        run:  mvn test
+        run: |
+          mvn test
+          mvn install
       
       - name: checkstyle
-        run: mvn maven-checkstyle-plugin:checkstyle
+        run: mvn checksytle:checkstyle
 
         
 
