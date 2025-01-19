@@ -21,12 +21,12 @@ jobs:
       - run: mvn --version
       - run: |
          ls -l /home/runner/.m2
-         ls -l /home/runner/.m2/repository
+         
       - name: Maven test
         run: |
           mvn test
           mvn install
-          
+          ls -l /home/runner/.m2/repository
       
       - name: checkstyle
         run: |
