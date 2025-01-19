@@ -27,6 +27,10 @@ jobs:
           mvn test
           mvn install
           ls -l /home/runner/.m2/repository
+          ls -l /home/runner/.m2/repository/org
+          ls -l /home/runner/.m2/repository/org/apache
+          ls -l /home/runner/.m2/repository/org/apache/maven
+          ls -l /home/runner/.m2/repository/org/apche/maven/plugins
       
       - name: checkstyle
         run: |
