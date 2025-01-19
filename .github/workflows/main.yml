@@ -24,7 +24,9 @@ jobs:
           mvn install
       
       - name: checkstyle
-        run: mvn maven-checkstyle-plugin:checkstyle
+        run: |
+          ls -l
+          mvn maven-checkstyle-plugin:checkstyle
 
         
 
