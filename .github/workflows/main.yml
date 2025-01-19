@@ -30,7 +30,7 @@ jobs:
           ls -l /home/runner/.m2/repository/org
           ls -l /home/runner/.m2/repository/org/apache
           ls -l /home/runner/.m2/repository/org/apache/maven
-          sudo ls -l /home/runner/.m2/repository/org/apche/maven/plugins
+          ls -l /home/runner/.m2/repository/org/apache/maven/plugins
       
       - name: checkstyle
         run: |
