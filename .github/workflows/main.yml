@@ -24,7 +24,7 @@ jobs:
           mvn install
       
       - name: checkstyle
-        run: mvn checksytle:checkstyle
+        run: mvn com.puppycrawl.tools:checkstyle
 
         
 
