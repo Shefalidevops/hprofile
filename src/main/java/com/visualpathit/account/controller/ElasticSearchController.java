@@ -2,6 +2,8 @@ package com.visualpathit.account.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+
 import org.elasticsearch.action.delete.DeleteResponse;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
@@ -81,6 +83,12 @@ public class ElasticSearchController {
         return tagList;
     }*/
 
+    /**
+     * @param id
+     * @param model
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(value="/rest/users/update/{id}", method=RequestMethod.GET)
     public String update(@PathVariable final String id,final Model model) throws IOException {
 
