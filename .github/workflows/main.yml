@@ -44,7 +44,11 @@
 
 
 name: Hprofile Actions
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs: 
    Testing:
       runs-on: ubuntu-latest
