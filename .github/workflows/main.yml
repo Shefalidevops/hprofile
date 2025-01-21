@@ -102,8 +102,8 @@ jobs:
 
 
         - run: |
-            ls -l
-            ls -l target
+            ls -la
+            ls -la target
 
         - name: SonarQube Quality Gate check
           id: sonarqube-quality-gate-check
