@@ -92,7 +92,6 @@ jobs:
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
             SONAR_HOST_URL: ${{ vars.SONAR_URL }}
           with: >
-            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
              -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
              -Dsonar.sources=src/ 
              -Dsonar.junit.reportsPath=target/surefire-reports/
