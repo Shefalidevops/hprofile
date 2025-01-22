@@ -44,7 +44,7 @@
 
 
 name: Hprofile Actions
-on: [push, workflow_dispatch]
+on: workflow_dispatch
 
 # permissions:
 #   contents: read
