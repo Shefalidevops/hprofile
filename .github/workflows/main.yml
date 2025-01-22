@@ -51,7 +51,7 @@ on: workflow_dispatch
 env:
   AWS_REGION: us-east-1 
   ECR_REPOSITORY: actapp
-  ECS_SERVICE: vproapp01-act-svc
+  ECS_SERVICE: vproapp01-act-swc
   ECS_CLUSTER: vproapp01-act
   ECS_TASK_DEFINITION: aws-files/taskdeffile.json
   CONTAINER_NAME: vproapp
