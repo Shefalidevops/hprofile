@@ -44,13 +44,10 @@
 
 
 name: Hprofile Actions
-on: 
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-permissions:
-  contents: read
+on: workflow_dispatch
+
+# permissions:
+#   contents: read
 env:
   AWS_REGION: us-east-1 
 jobs: 
