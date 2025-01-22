@@ -119,6 +119,7 @@ jobs:
              SONAR_HOST_URL: ${{ vars.SONAR_URL }} #OPTIONAL
 
    BUILD_AND_PUBLISH:
+    needs: Testing
     runs-on:  ubuntu-latest
     steps: 
         - name: Code checkout

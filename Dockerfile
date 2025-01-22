@@ -1,5 +1,5 @@
 FROM openjdk:17 AS BUILD_IMAGE
-RUN yum update && yum install maven -y
+RUN dnf update && dnf install maven -y
 COPY ./ vprofile-project
 RUN cd vprofile-project &&  mvn install 
 
