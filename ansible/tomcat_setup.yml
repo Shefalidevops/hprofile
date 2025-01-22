@@ -2,7 +2,7 @@
   hosts: appsrvgrp
   become: yes
   vars:
-    tom_url: https://archive.apache.org/dist/tomcat/tomcat-8/v8.5.37/bin/apache-tomcat-8.5.37.tar.gz
+    tom_url: https://archive.apache.org/dist/tomcat/tomcat-11/v11.0.0-M1/bin/apache-tomcat-11.0.0-M1.tar.gz
 
   tasks:
     - name: Install JDK on Centos 6/7
@@ -21,7 +21,7 @@
     - name: Download Tomcat Tar Ball/Binaries
       get_url:
         url: "{{tom_url}}"
-        dest: /tmp/tomcat-8.tar.gz
+        dest: /tmp/tomcat-11.tar.gz
 
     - name: Add tomcat group
       group:
@@ -33,15 +33,15 @@
         name: tomcat
         group: tomcat
         shell: /bin/nologin
-        home: /usr/local/tomcat8
+        home: /usr/local/tomcat11
 
     - file:
-        path: /tmp/tomcat8
+        path: /tmp/tomcat11
         state: directory
 
     - name: Extract tomcat
       unarchive:
-        src: /tmp/tomcat-8.tar.gz
+        src: /tmp/tomcat-11.tar.gz
         dest: /tmp/tomcat8/
         remote_src: yes
         list_files: yes
@@ -50,15 +50,15 @@
     - debug:
         msg: "{{unarchive_info.files[0].split('/')[0]}}"
 
-    - name: Synchronize /tmp/tomcat8/tomcat_cont /usr/local/tomcat8.
+    - name: Synchronize /tmp/tomcat11/tomcat_cont /usr/local/tomcat11.
       synchronize:
-        src: "/tmp/tomcat8/{{unarchive_info.files[0].split('/')[0]}}/"
-        dest: /usr/local/tomcat8/
+        src: "/tmp/tomcat11{{unarchive_info.files[0].split('/')[0]}}/"
+        dest: /usr/local/tomcat11/
       delegate_to: "{{ inventory_hostname }}"
 
-    - name: Change ownership of /usr/local/tomcat8
+    - name: Change ownership of /usr/local/tomcat11
       file:
-        path: /usr/local/tomcat8
+        path: /usr/local/tomcat11
         owner: tomcat
         group: tomcat
         recurse: yes
@@ -104,7 +104,7 @@
         daemon_reload: yes 
       when: ansible_distribution_major_version > '6' or ansible_distribution_major_version > '15'
 
-    - name: Start & Enable TOmcat 8
+    - name: Start & Enable Tomcat 11
       service:
         name: tomcat
         state: started
