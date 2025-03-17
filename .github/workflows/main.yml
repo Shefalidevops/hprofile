@@ -52,7 +52,7 @@ env:
   AWS_REGION: us-east-1 
   ECR_REPOSITORY: actapp
   ECS_SERVICE: vproapp01-act-swcs
-  ECS_CLUSTER: vproapp01-cluster90
+  ECS_CLUSTER: vproapp-cluster90
   ECS_TASK_DEFINITION: aws-files/taskdeffile.json
   CONTAINER_NAME: vproappcluster
 
