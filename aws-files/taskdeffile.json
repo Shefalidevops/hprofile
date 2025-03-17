@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:881490106955:task-definition/vproapp01-act-tdef:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:881490106955:task-definition/vproapp01-act-tdef1:1",
     "containerDefinitions": [
         {
-            "name": "vproapp",
+            "name": "vproappcluster",
             "image": "881490106955.dkr.ecr.us-east-1.amazonaws.com/actapp",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "vproapp-8080-tcp",
+                    "name": "vproappcluster-8080-tcp",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp",
@@ -23,7 +23,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/vproapp01-act-tdef",
+                    "awslogs-group": "/ecs/vproapp01-act-tdef1",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -35,7 +35,7 @@
             "systemControls": []
         }
     ],
-    "family": "vproapp01-act-tdef",
+    "family": "vproapp01-act-tdef1",
     "executionRoleArn": "arn:aws:iam::881490106955:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "revision": 1,
@@ -84,13 +84,13 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-01-22T19:43:23.503Z",
+    "registeredAt": "2025-03-17T16:53:23.644Z",
     "registeredBy": "arn:aws:iam::881490106955:root",
     "enableFaultInjection": false,
     "tags": [
         {
             "key": "Name",
-            "value": "vproapp01-act-tdef"
+            "value": "vproapp-cluster90"
         }
     ]
 }

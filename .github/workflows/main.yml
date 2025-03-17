@@ -51,10 +51,10 @@ on: workflow_dispatch
 env:
   AWS_REGION: us-east-1 
   ECR_REPOSITORY: actapp
-  ECS_SERVICE: vproapp01-act-swc
-  ECS_CLUSTER: vproapp01-act
+  ECS_SERVICE: vproapp01-act-swcs
+  ECS_CLUSTER: vproapp01-cluster90
   ECS_TASK_DEFINITION: aws-files/taskdeffile.json
-  CONTAINER_NAME: vproapp
+  CONTAINER_NAME: vproappcluster
 
 
 jobs: 
@@ -161,7 +161,7 @@ jobs:
         - name: Configure AWS credentials
           uses: aws-actions/configure-aws-credentials@v1
           with:
-            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} 
             aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             aws-region: ${{ env.AWS_REGION }}
     
